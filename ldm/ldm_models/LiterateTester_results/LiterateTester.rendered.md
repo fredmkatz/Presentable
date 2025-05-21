@@ -45,10 +45,131 @@ __ _Unsaid Other Details_ ()
 - ***datePublished*** - when the edition was released to the public (optional
 reference BiblioDate)
 
+Just use Mermaid in code block
+
+
+``` notmermaid
+
+block-beta
+columns 3
+a:3
+block:group1:2
+columns 2
+h i j k
+end
+g
+block:group2:3
+%% columns auto (default)
+l m n o p q r
+end
+
+```
+
+And here's the result
+
+
+```mermaid
+block-beta
+columns 3
+a:3
+block:group1:2
+columns 2
+h i j k
+end
+g
+block:group2:3
+%% columns auto (default)
+l m n o p q r
+end
+```
+
+``` mermaid
+
+erDiagram
+CAR {
+string registrationNumber
+string make
+string model
+}
+PERSON {
+string firstName
+string lastName
+int age
+}
+
+style CAR fill:#f9f,stroke:#333,stroke-width:4px
+
+
+```
+
 _ **HardcoverEdition**
+
+``` mermaid
+erDiagram
+
+
+class Subject Component
+class Section Component
+class Attribute Component
+class Class Component
+
+SUBJECT {
+string name
+
+}
+Subject ||--|{ Subject : contains
+Subject ||--|{ Class : contains
+Class {
+string name
+}
+
+Class ||--|{ Section : contains
+Class ||--|{ Attribute : contains
+Attribute {
+
+string name
+}
+Section ||--|{ Attribute : contains
+
+
+
+```
 
 _subtypeOf_: Edition subtypes, Work subtypes
 _ **PaperbackEdition**
+
+And in the elaboration, a figure:
+
+
+<figure>
+
++ <img src="../FMKNYIDFrontIMG_1141.jpg" alt="Trulli" style="width:30%">
+
++ <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+
++ </figure>
+
++ And the same figure with figure/caption markup
+
+
+<figure title="A Drivers License">
+
++ <img src="../FMKNYIDFrontIMG_1141.jpg" style="width:20%">
+
++ <figcaption>My Non-Drivers License</figcaption>
+
++ </figure>
+
+
+and a list of codes
+
+
+```csv
+eFormat, Description
+E-Book, 'Kindle or Apple books - etc'
+PDF, formatted for printing and direct delivery
+
+```
 
 _subtypeOf_: Edition byFormat, Work bySomethingElse
 _ **ElectronicEdition**
@@ -398,100 +519,10 @@ Here's a paragraph that will be visible.
 And here's another paragraph that's visible.
 
 
-### Figures DS Copy jpg
+## Diagrams
 
-just copy and paste into Obsidian page (or drag and drop)
+### Figures
 
+1. First item
 
-Captions are harder
-
-
-## Diagrams Just use Mermaid in code block
-
-``` (mermaid)
-
-block-beta
-columns 3
-a:3
-block:group1:2
-columns 2
-h i j k
-end
-g
-block:group2:3
-%% columns auto (default)
-l m n o p q r
-end
-```
-
-And here's the result
-
-
-```mermaid
-
-block-beta
-columns 3
-a:3
-block:group1:2
-columns 2
-h i j k
-end
-g
-block:group2:3
-%% columns auto (default)
-l m n o p q r
-end
-```
-
-## Admonitions
-
-```ad-tip
-title: This is a tip
-This is the content of the admonition tip.
-```
-
-### Obsidian Callouts
-
-> [!info]
-
-+ > Here's a callout block.
-
-+ > It supports **Markdown**, [[Internal link|Wikilinks]], and [[Embed files|embeds]]!
-
-+ > ![[Engelbart.jpg]]
-
-
-> [!note]
-
-+ > Lorem ipsum dolor sit amet
-
-
-> [!abstract]
-
-+ > Lorem ipsum dolor sit amet
-
-
-> [!question]
-
-+ > Lorem ipsum dolor sit amet
-
-
->[!question]
-
-+ >Why is the sky blue?
-
-
-## Capabilities
-
-### To PDF
-
-### To HTML
-
-### Prettify
-
-### Edit in VS Code
-
-### TOC
-
-### Index
 

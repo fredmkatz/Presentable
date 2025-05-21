@@ -3,12 +3,17 @@
 <html>
 <head>
     <link rel="stylesheet" href="../../Literate.css">
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    </script>
 </head>
 <body>
 <div class="LiterateModel">
  <div class="elaboration list">
-  <div class="Paragraph">
-   This is a small sample of a Literate Data Model, used for testing each of the constructs, at lease once.
+  <div class="Paragraph mdhtml">
+   <p>
+    This is a small sample of a Literate Data Model, used for testing each of the constructs, at lease once.
+   </p>
   </div>
  </div>
  <div class="subjects list">
@@ -20,20 +25,28 @@
     <a class="SubjectName name" id="Sample Classes">
      Sample Classes
     </a>
-    <div class="OneLiner">
-     with a one liner for the subject, spanning
+    <div class="OneLiner mdhtml">
+     <p>
+      with a one liner for the subject, spanning
 two lines
+     </p>
     </div>
    </div>
    <div class="elaboration list">
-    <div class="Paragraph">
-     And an elaboration, with a few paragraphs
+    <div class="Paragraph mdhtml">
+     <p>
+      And an elaboration, with a few paragraphs
+     </p>
     </div>
-    <div class="Paragraph">
-     Paragraph 2
+    <div class="Paragraph mdhtml">
+     <p>
+      Paragraph 2
+     </p>
     </div>
-    <div class="Paragraph">
-     Paragraph 3
+    <div class="Paragraph mdhtml">
+     <p>
+      Paragraph 3
+     </p>
     </div>
    </div>
    <div class="subjects list">
@@ -55,8 +68,10 @@ two lines
         <a class="ClassName name" id="Edition">
          Edition
         </a>
-        <div class="OneLiner">
-         a manifestation of a literary work
+        <div class="OneLiner mdhtml">
+         <p>
+          a manifestation of a literary work
+         </p>
         </div>
        </div>
        <div class="based_on_clause">
@@ -83,8 +98,10 @@ two lines
           <a class="AttributeName name" id="title">
            title
           </a>
-          <div class="OneLiner">
-           the title, as shown on the book's title page
+          <div class="OneLiner mdhtml">
+           <p>
+            the title, as shown on the book's title page
+           </p>
           </div>
           <span class="parenthetical value">
            Full Title
@@ -125,8 +142,10 @@ two lines
           <a class="AttributeName name" id="author">
            author
           </a>
-          <div class="OneLiner">
-           the writer
+          <div class="OneLiner mdhtml">
+           <p>
+            the writer
+           </p>
           </div>
           <span class="parenthetical value">
            Person
@@ -149,8 +168,10 @@ two lines
           <a class="AttributeName name" id="illustrators">
            illustrators
           </a>
-          <div class="OneLiner">
-           artists who supplied the pictures
+          <div class="OneLiner mdhtml">
+           <p>
+            artists who supplied the pictures
+           </p>
           </div>
           <span class="parenthetical value">
            List of People
@@ -193,8 +214,10 @@ two lines
             <a class="AttributeName name" id="datePublished">
              datePublished
             </a>
-            <div class="OneLiner">
-             when the edition was released to the public
+            <div class="OneLiner mdhtml">
+             <p>
+              when the edition was released to the public
+             </p>
             </div>
             <span class="parenthetical value">
              BiblioDate
@@ -231,8 +254,10 @@ two lines
             <a class="AttributeName name" id="numberOfPages">
              numberOfPages
             </a>
-            <div class="OneLiner">
-             last page number
+            <div class="OneLiner mdhtml">
+             <p>
+              last page number
+             </p>
             </div>
             <span class="parenthetical value">
              optional Integer
@@ -267,8 +292,10 @@ two lines
             <a class="AttributeName name" id="datePublished">
              datePublished
             </a>
-            <div class="OneLiner">
-             when the edition was released to the public
+            <div class="OneLiner mdhtml">
+             <p>
+              when the edition was released to the public
+             </p>
             </div>
             <span class="parenthetical value">
              BiblioDate
@@ -281,6 +308,69 @@ two lines
               value
              </span>
             </span>
+           </div>
+           <div class="elaboration list">
+            <div class="Paragraph mdhtml">
+             <p>
+              Just use Mermaid in code block
+             </p>
+            </div>
+            <div class="CodeBlock mdhtml">
+             <pre><code class="language-notmermaid">
+block-beta
+columns 3
+a:3
+block:group1:2
+columns 2
+h i j k
+end
+g
+block:group2:3
+%% columns auto (default)
+l m n o p q r
+end
+
+</code></pre>
+            </div>
+            <div class="Paragraph mdhtml">
+             <p>
+              And here's the result
+             </p>
+            </div>
+            <div class="CodeBlock mdhtml">
+             <pre><code class="language-mermaid mermaid">block-beta
+columns 3
+a:3
+block:group1:2
+columns 2
+h i j k
+end
+g
+block:group2:3
+%% columns auto (default)
+l m n o p q r
+end
+</code></pre>
+            </div>
+            <div class="CodeBlock mdhtml">
+             <pre><code class="language-mermaid mermaid">
+erDiagram
+CAR {
+string registrationNumber
+string make
+string model
+}
+PERSON {
+string firstName
+string lastName
+int age
+}
+
+style CAR fill:#f9f,stroke:#333,stroke-width:4px
+
+
+</code></pre>
+            </div>
            </div>
           </div>
          </div>
@@ -315,6 +405,39 @@ two lines
          </div>
         </div>
        </div>
+       <div class="elaboration list">
+        <div class="CodeBlock mdhtml">
+         <pre><code class="language-mermaid mermaid">erDiagram
+
+
+class Subject Component
+class Section Component
+class Attribute Component
+class Class Component
+
+SUBJECT {
+string name
+
+}
+Subject ||--|{ Subject : contains
+Subject ||--|{ Class : contains
+Class {
+string name
+}
+
+Class ||--|{ Section : contains
+Class ||--|{ Attribute : contains
+Attribute {
+
+string name
+}
+Section ||--|{ Attribute : contains
+
+
+
+</code></pre>
+        </div>
+       </div>
       </div>
       <div class="Class">
        <div class="Class_header header">
@@ -342,6 +465,90 @@ two lines
           </span>
           bySomething
          </div>
+        </div>
+       </div>
+       <div class="elaboration list">
+        <div class="Paragraph mdhtml">
+         <p>
+          And in the elaboration, a figure:
+         </p>
+        </div>
+        <div class="Paragraph mdhtml">
+         <figure>
+          +
+          <img alt="Trulli" src="../FMKNYIDFrontIMG_1141.jpg" style="width:30%"/>
+          +
+          <figcaption>
+           Fig.1 - Trulli, Puglia, Italy.
+          </figcaption>
+          +
+         </figure>
+         <ul>
+          <li>
+           And the same figure with figure/caption markup
+          </li>
+         </ul>
+        </div>
+        <div class="Paragraph mdhtml">
+         <figure title="A Drivers License">
+          +
+          <img src="../FMKNYIDFrontIMG_1141.jpg" style="width:20%"/>
+          +
+          <figcaption>
+           My Non-Drivers License
+          </figcaption>
+          +
+         </figure>
+        </div>
+        <div class="Paragraph mdhtml">
+         <p>
+          and a list of codes
+         </p>
+        </div>
+        <div class="CodeBlock mdhtml">
+         <pre><code class="language-csv">eFormat, Description
+E-Book, 'Kindle or Apple books - etc'
+PDF, formatted for printing and direct delivery
+
+</code></pre>
+         <table border="1" class="dataframe">
+          <thead>
+           <tr style="text-align: right;">
+            <th>
+            </th>
+            <th>
+             eFormat
+            </th>
+            <th>
+             Description
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <th>
+             0
+            </th>
+            <td>
+             E-Book
+            </td>
+            <td>
+             'Kindle or Apple books - etc'
+            </td>
+           </tr>
+           <tr>
+            <th>
+             1
+            </th>
+            <td>
+             PDF
+            </td>
+            <td>
+             formatted for printing and direct delivery
+            </td>
+           </tr>
+          </tbody>
+         </table>
         </div>
        </div>
       </div>
@@ -376,8 +583,10 @@ two lines
           <a class="AttributeName name" id="eFormat">
            eFormat
           </a>
-          <div class="OneLiner">
-           the precise medium for the electronic edition
+          <div class="OneLiner mdhtml">
+           <p>
+            the precise medium for the electronic edition
+           </p>
           </div>
           <span class="parenthetical value">
            Code
@@ -392,13 +601,50 @@ two lines
           </span>
          </div>
          <div class="elaboration list">
-          <div class="CodeBlock">
-           ```csv
-eFormat, Description
+          <div class="CodeBlock mdhtml">
+           <pre><code class="language-csv">eFormat, Description
 E-Book, 'Kindle or Apple books - etc'
 PDF, formatted for printing and direct delivery
 
-```
+</code></pre>
+           <table border="1" class="dataframe">
+            <thead>
+             <tr style="text-align: right;">
+              <th>
+              </th>
+              <th>
+               eFormat
+              </th>
+              <th>
+               Description
+              </th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+              <th>
+               0
+              </th>
+              <td>
+               E-Book
+              </td>
+              <td>
+               'Kindle or Apple books - etc'
+              </td>
+             </tr>
+             <tr>
+              <th>
+               1
+              </th>
+              <td>
+               PDF
+              </td>
+              <td>
+               formatted for printing and direct delivery
+              </td>
+             </tr>
+            </tbody>
+           </table>
           </div>
          </div>
         </div>
@@ -406,13 +652,50 @@ PDF, formatted for printing and direct delivery
       </div>
       <div class="CodeType">
        <div class="elaboration list">
-        <div class="CodeBlock">
-         ```csv
-Format, Description
+        <div class="CodeBlock mdhtml">
+         <pre><code class="language-csv">Format, Description
 E-Book, 'Kindle or Apple books - etc'
 PDF, formatted for printing and direct delivery
 
-```
+</code></pre>
+         <table border="1" class="dataframe">
+          <thead>
+           <tr style="text-align: right;">
+            <th>
+            </th>
+            <th>
+             Format
+            </th>
+            <th>
+             Description
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <th>
+             0
+            </th>
+            <td>
+             E-Book
+            </td>
+            <td>
+             'Kindle or Apple books - etc'
+            </td>
+           </tr>
+           <tr>
+            <th>
+             1
+            </th>
+            <td>
+             PDF
+            </td>
+            <td>
+             formatted for printing and direct delivery
+            </td>
+           </tr>
+          </tbody>
+         </table>
         </div>
        </div>
       </div>
@@ -438,8 +721,10 @@ PDF, formatted for printing and direct delivery
           <a class="AttributeName name" id="streetAddress">
            streetAddress
           </a>
-          <div class="OneLiner">
-           usually the street and number
+          <div class="OneLiner mdhtml">
+           <p>
+            usually the street and number
+           </p>
           </div>
           <span class="parenthetical value">
            Text
@@ -462,8 +747,10 @@ PDF, formatted for printing and direct delivery
           <a class="AttributeName name" id="streetAddress">
            streetAddress
           </a>
-          <div class="OneLiner">
-           usually the apartment or unit number
+          <div class="OneLiner mdhtml">
+           <p>
+            usually the apartment or unit number
+           </p>
           </div>
           <span class="parenthetical value">
            Text
@@ -624,18 +911,49 @@ PDF, formatted for printing and direct delivery
       </a>
      </div>
      <div class="elaboration list">
-      <div class="Paragraph">
-       * Name parsing
- 
-+ * value types
- 
-+ * Rendering code blocks. capture language
- 
-+ * Subtypings - exclusive, exhaustive
- 
-+ * Data types with reference/value and cardinality
- 
-+ * Optional on Attribute Section
+      <div class="Paragraph mdhtml">
+       <ul>
+        <li>
+         <p>
+          Name parsing
+         </p>
+        </li>
+        <li>
+         <ul>
+          <li>
+           value types
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Rendering code blocks. capture language
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Subtypings - exclusive, exhaustive
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Data types with reference/value and cardinality
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Optional on Attribute Section
+          </li>
+         </ul>
+        </li>
+       </ul>
       </div>
      </div>
     </div>
@@ -649,10 +967,21 @@ PDF, formatted for printing and direct delivery
       </a>
      </div>
      <div class="elaboration list">
-      <div class="Paragraph">
-       * Code types
- 
-+ * And data block
+      <div class="Paragraph mdhtml">
+       <ul>
+        <li>
+         <p>
+          Code types
+         </p>
+        </li>
+        <li>
+         <ul>
+          <li>
+           And data block
+          </li>
+         </ul>
+        </li>
+       </ul>
       </div>
      </div>
     </div>
@@ -666,12 +995,28 @@ PDF, formatted for printing and direct delivery
       </a>
      </div>
      <div class="elaboration list">
-      <div class="Paragraph">
-       * cycles
- 
-+ * references to classes, subtypings
- 
-+ * references to attributes
+      <div class="Paragraph mdhtml">
+       <ul>
+        <li>
+         <p>
+          cycles
+         </p>
+        </li>
+        <li>
+         <ul>
+          <li>
+           references to classes, subtypings
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           references to attributes
+          </li>
+         </ul>
+        </li>
+       </ul>
       </div>
      </div>
     </div>
@@ -685,14 +1030,35 @@ PDF, formatted for printing and direct delivery
       </a>
      </div>
      <div class="elaboration list">
-      <div class="Paragraph">
-       * Subtypes, subtypings
- 
-+ * inverse attributes
- 
-+ * Overrides what
- 
-+ * explicit for data type value/reference
+      <div class="Paragraph mdhtml">
+       <ul>
+        <li>
+         <p>
+          Subtypes, subtypings
+         </p>
+        </li>
+        <li>
+         <ul>
+          <li>
+           inverse attributes
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Overrides what
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           explicit for data type value/reference
+          </li>
+         </ul>
+        </li>
+       </ul>
       </div>
      </div>
     </div>
@@ -706,8 +1072,12 @@ PDF, formatted for printing and direct delivery
       </a>
      </div>
      <div class="elaboration list">
-      <div class="Paragraph">
-       * Diagrams
+      <div class="Paragraph mdhtml">
+       <ul>
+        <li>
+         Diagrams
+        </li>
+       </ul>
       </div>
      </div>
     </div>
@@ -733,25 +1103,64 @@ PDF, formatted for printing and direct delivery
       </a>
      </div>
      <div class="elaboration list">
-      <div class="Paragraph">
-       Notice that, here, asterisks are used for lists and embedded list, so the items won't be confused with attributes
+      <div class="Paragraph mdhtml">
+       <p>
+        Notice that, here, asterisks are used for lists and embedded list, so the items won't be confused with attributes
+       </p>
       </div>
-      <div class="Paragraph">
-       * Subject - w/ one-liner
- 
-+ * Class one-liner?, Value Type
- 
-+ * Attribute Section - optional?
- 
-+ * Attribute Header
- 
-+ **  with and without one-liners
- 
-+ ** with and without data type expressions
- 
-+ * Formulas, derivation, default, constraint
- 
-+ * Annotations
+      <div class="Paragraph mdhtml">
+       <ul>
+        <li>
+         <p>
+          Subject - w/ one-liner
+         </p>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Class one-liner?, Value Type
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Attribute Section - optional?
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Attribute Header
+          </li>
+         </ul>
+        </li>
+        <li>
+         <p>
+          **  with and without one-liners
+         </p>
+        </li>
+        <li>
+         <p>
+          ** with and without data type expressions
+         </p>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Formulas, derivation, default, constraint
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Annotations
+          </li>
+         </ul>
+        </li>
+       </ul>
       </div>
      </div>
     </div>
@@ -782,31 +1191,89 @@ PDF, formatted for printing and direct delivery
       </a>
      </div>
      <div class="elaboration list">
-      <div class="Paragraph">
-       * Plural
- 
-+ * Abbreviation
- 
-+ * Subtype of
- 
-+ * Based on
- 
-+ * Where
- 
-+ * Diagnostics
- 
-+ * Annotations
+      <div class="Paragraph mdhtml">
+       <ul>
+        <li>
+         <p>
+          Plural
+         </p>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Abbreviation
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Subtype of
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Based on
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Where
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Diagnostics
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Annotations
+          </li>
+         </ul>
+        </li>
+       </ul>
       </div>
-      <div class="Paragraph">
-       Fleshed in
- 
-+ * Subtypes, subtypings
- 
-+ * Dependents
- 
-+ * Ancestors
- 
-+ *
+      <div class="Paragraph mdhtml">
+       <p>
+        Fleshed in
+       </p>
+       <ul>
+        <li>
+         <ul>
+          <li>
+           Subtypes, subtypings
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Dependents
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Ancestors
+          </li>
+         </ul>
+        </li>
+        <li>
+         <p>
+          *
+         </p>
+        </li>
+       </ul>
       </div>
      </div>
     </div>
@@ -820,23 +1287,63 @@ PDF, formatted for printing and direct delivery
       </a>
      </div>
      <div class="elaboration list">
-      <div class="Paragraph">
-       * Data type
- 
-+ * Default
- 
-+ * Derivation
- 
-+ * Constraint
- 
-+ * Required/optional - if/unless
+      <div class="Paragraph mdhtml">
+       <ul>
+        <li>
+         <p>
+          Data type
+         </p>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Default
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Derivation
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Constraint
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Required/optional - if/unless
+          </li>
+         </ul>
+        </li>
+       </ul>
       </div>
-      <div class="Paragraph">
-       Fleshed in
- 
-+ * overrides
- 
-+ * inverse of
+      <div class="Paragraph mdhtml">
+       <p>
+        Fleshed in
+       </p>
+       <ul>
+        <li>
+         <ul>
+          <li>
+           overrides
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           inverse of
+          </li>
+         </ul>
+        </li>
+       </ul>
       </div>
      </div>
     </div>
@@ -882,12 +1389,28 @@ PDF, formatted for printing and direct delivery
       </a>
      </div>
      <div class="elaboration list">
-      <div class="Paragraph">
-       * Base Type. Reference vs Value
- 
-+ * List, set, mapping types
- 
-+ * Nested operators
+      <div class="Paragraph mdhtml">
+       <ul>
+        <li>
+         <p>
+          Base Type. Reference vs Value
+         </p>
+        </li>
+        <li>
+         <ul>
+          <li>
+           List, set, mapping types
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Nested operators
+          </li>
+         </ul>
+        </li>
+       </ul>
       </div>
      </div>
      <div class="classes list">
@@ -909,8 +1432,10 @@ PDF, formatted for printing and direct delivery
           <a class="AttributeName name" id="firstEdition">
            firstEdition
           </a>
-          <div class="OneLiner">
-           a home for the data type clauses
+          <div class="OneLiner mdhtml">
+           <p>
+            a home for the data type clauses
+           </p>
           </div>
           <span class="parenthetical value">
            List of Edition
@@ -946,8 +1471,10 @@ PDF, formatted for printing and direct delivery
         <a class="ClassName name" id="Edition">
          Edition
         </a>
-        <div class="OneLiner">
-         to try more complex data types
+        <div class="OneLiner mdhtml">
+         <p>
+          to try more complex data types
+         </p>
         </div>
        </div>
        <div class="attributes list">
@@ -959,8 +1486,10 @@ PDF, formatted for printing and direct delivery
           <a class="AttributeName name" id="author">
            author
           </a>
-          <div class="OneLiner">
-           assuming just one
+          <div class="OneLiner mdhtml">
+           <p>
+            assuming just one
+           </p>
           </div>
          </div>
          <div class="dataType_clause">
@@ -980,8 +1509,10 @@ PDF, formatted for printing and direct delivery
           <a class="AttributeName name" id="artists">
            artists
           </a>
-          <div class="OneLiner">
-           allowing for multiple
+          <div class="OneLiner mdhtml">
+           <p>
+            allowing for multiple
+           </p>
           </div>
          </div>
          <div class="dataType_clause">
@@ -1109,10 +1640,21 @@ PDF, formatted for printing and direct delivery
       </a>
      </div>
      <div class="elaboration list">
-      <div class="Paragraph">
-       * Optionality
- 
-+ * Cardinality
+      <div class="Paragraph mdhtml">
+       <ul>
+        <li>
+         <p>
+          Optionality
+         </p>
+        </li>
+        <li>
+         <ul>
+          <li>
+           Cardinality
+          </li>
+         </ul>
+        </li>
+       </ul>
       </div>
      </div>
     </div>
@@ -1138,35 +1680,79 @@ PDF, formatted for printing and direct delivery
       </a>
      </div>
      <div class="elaboration list">
-      <div class="Paragraph">
-       Unindented paragraph.
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
+      <div class="Paragraph mdhtml">
+       <p>
+        Unindented paragraph.
+       </p>
+       <ul>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+       </ul>
       </div>
-      <div class="Paragraph">
-       Indented paragraph.
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
+      <div class="Paragraph mdhtml">
+       <p>
+        Indented paragraph.
+       </p>
+       <ul>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+       </ul>
       </div>
      </div>
     </div>
@@ -1200,59 +1786,150 @@ PDF, formatted for printing and direct delivery
       </a>
      </div>
      <div class="elaboration list">
-      <div class="Paragraph">
-       &gt; paragraph with angle before first line
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
+      <div class="Paragraph mdhtml">
+       <blockquote>
+        <p>
+         paragraph with angle before first line
+        </p>
+       </blockquote>
+       <ul>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+       </ul>
       </div>
-      <div class="Paragraph">
-       &gt; parag with angles on every line
- 
-+ &gt; next line
- 
-+ &gt; next line
+      <div class="Paragraph mdhtml">
+       <blockquote>
+        <p>
+         parag with angles on every line
+        </p>
+       </blockquote>
+       <ul>
+        <li>
+         <blockquote>
+          <p>
+           next line
+          </p>
+         </blockquote>
+        </li>
+        <li>
+         <blockquote>
+          <p>
+           next line
+          </p>
+         </blockquote>
+        </li>
+       </ul>
       </div>
-      <div class="Paragraph">
-       Nested block quotes
+      <div class="Paragraph mdhtml">
+       <p>
+        Nested block quotes
+       </p>
       </div>
-      <div class="Paragraph">
-       &gt; paragraph with angle before first line
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ &gt;&gt; Nested goes here
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
- 
-+ and not on next line and many subsequent lines
+      <div class="Paragraph mdhtml">
+       <blockquote>
+        <p>
+         paragraph with angle before first line
+        </p>
+       </blockquote>
+       <ul>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <blockquote>
+          <blockquote>
+           <p>
+            Nested goes here
+           </p>
+          </blockquote>
+         </blockquote>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+        <li>
+         <p>
+          and not on next line and many subsequent lines
+         </p>
+        </li>
+       </ul>
       </div>
      </div>
     </div>
@@ -1286,16 +1963,15 @@ PDF, formatted for printing and direct delivery
       </a>
      </div>
      <div class="elaboration list">
-      <div class="CodeBlock">
-       ```markdown
-This is some text, with indented lists
+      <div class="CodeBlock mdhtml">
+       <pre><code class="language-markdown">This is some text, with indented lists
 - Item
 - Item2
 - Item 3
 - Item a
 - Item b
 - Item c
-```
+</code></pre>
       </div>
      </div>
     </div>
@@ -1307,18 +1983,79 @@ This is some text, with indented lists
       <a class="SubjectName name" id="Code Tables">
        Code Tables
       </a>
-      <div class="OneLiner">
-       CSV Codeblock
-So. This is the **one to use to enter codes**, lists of annotations, etc
+      <div class="OneLiner mdhtml">
+       <p>
+        CSV Codeblock
+So. This is the
+        <strong>
+         one to use to enter codes
+        </strong>
+        , lists of annotations, etc
+       </p>
       </div>
      </div>
      <div class="elaboration list">
-      <div class="CodeBlock">
-       ```csv
-Pos, Date, Name, Price
+      <div class="CodeBlock mdhtml">
+       <pre><code class="language-csv">Pos, Date, Name, Price
 1, 2023-09-28, Spices, 150$
 2, 2023-02-29, Shovel, 1.25$
-```
+</code></pre>
+       <table border="1" class="dataframe">
+        <thead>
+         <tr style="text-align: right;">
+          <th>
+          </th>
+          <th>
+           Pos
+          </th>
+          <th>
+           Date
+          </th>
+          <th>
+           Name
+          </th>
+          <th>
+           Price
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <th>
+           0
+          </th>
+          <td>
+           1
+          </td>
+          <td>
+           2023-09-28
+          </td>
+          <td>
+           Spices
+          </td>
+          <td>
+           150$
+          </td>
+         </tr>
+         <tr>
+          <th>
+           1
+          </th>
+          <td>
+           2
+          </td>
+          <td>
+           2023-02-29
+          </td>
+          <td>
+           Shovel
+          </td>
+          <td>
+           1.25$
+          </td>
+         </tr>
+        </tbody>
+       </table>
       </div>
      </div>
     </div>
@@ -1342,40 +2079,29 @@ Pos, Date, Name, Price
       </a>
      </div>
      <div class="elaboration list">
-      <div class="Paragraph">
-       Here's a paragraph that will be visible.
- 
-+ (Hard to see what's required: blank lines?]
+      <div class="Paragraph mdhtml">
+       <p>
+        Here's a paragraph that will be visible.
+       </p>
+       <ul>
+        <li>
+         (Hard to see what's required: blank lines?]
+        </li>
+       </ul>
       </div>
-      <div class="Paragraph">
-       [This is a comment that will be hidden.]: #
+      <div class="Paragraph mdhtml">
       </div>
-      <div class="Paragraph">
-       [This is a comment] #
+      <div class="Paragraph mdhtml">
+       <p>
+        [This is a comment] #
+       </p>
       </div>
-      <div class="Paragraph">
-       [This is a comment that will be hidden.]: #
+      <div class="Paragraph mdhtml">
       </div>
-      <div class="Paragraph">
-       And here's another paragraph that's visible.
-      </div>
-     </div>
-    </div>
-    <div class="Subject">
-     <div class="Subject_header header">
-      <span class="prefix value">
-       ###
-      </span>
-      <a class="SubjectName name" id="Figures DS Copy jpg">
-       Figures DS Copy jpg
-      </a>
-     </div>
-     <div class="elaboration list">
-      <div class="Paragraph">
-       just copy and paste into Obsidian page (or drag and drop)
-      </div>
-      <div class="Paragraph">
-       Captions are harder
+      <div class="Paragraph mdhtml">
+       <p>
+        And here's another paragraph that's visible.
+       </p>
       </div>
      </div>
     </div>
@@ -1386,118 +2112,8 @@ Pos, Date, Name, Price
     <span class="prefix value">
      ##
     </span>
-    <a class="SubjectName name" id="Diagrams Just use Mermaid in code block">
-     Diagrams Just use Mermaid in code block
-    </a>
-   </div>
-   <div class="elaboration list">
-    <div class="CodeBlock">
-     ``` (mermaid)
-
-block-beta
-columns 3
-a:3
-block:group1:2
-columns 2
-h i j k
-end
-g
-block:group2:3
-%% columns auto (default)
-l m n o p q r
-end
-```
-    </div>
-    <div class="Paragraph">
-     And here's the result
-    </div>
-    <div class="CodeBlock">
-     ```mermaid
-
-block-beta
-columns 3
-a:3
-block:group1:2
-columns 2
-h i j k
-end
-g
-block:group2:3
-%% columns auto (default)
-l m n o p q r
-end
-```
-    </div>
-   </div>
-  </div>
-  <div class="Subject">
-   <div class="Subject_header header">
-    <span class="prefix value">
-     ##
-    </span>
-    <a class="SubjectName name" id="Admonitions">
-     Admonitions
-    </a>
-   </div>
-   <div class="elaboration list">
-    <div class="CodeBlock">
-     ```ad-tip
-title: This is a tip
-This is the content of the admonition tip.
-```
-    </div>
-   </div>
-   <div class="subjects list">
-    <div class="Subject">
-     <div class="Subject_header header">
-      <span class="prefix value">
-       ###
-      </span>
-      <a class="SubjectName name" id="Obsidian Callouts">
-       Obsidian Callouts
-      </a>
-     </div>
-     <div class="elaboration list">
-      <div class="Paragraph">
-       &gt; [!info]
- 
-+ &gt; Here's a callout block.
- 
-+ &gt; It supports **Markdown**, [[Internal link|Wikilinks]], and [[Embed files|embeds]]!
- 
-+ &gt; ![[Engelbart.jpg]]
-      </div>
-      <div class="Paragraph">
-       &gt; [!note]
- 
-+ &gt; Lorem ipsum dolor sit amet
-      </div>
-      <div class="Paragraph">
-       &gt; [!abstract]
- 
-+ &gt; Lorem ipsum dolor sit amet
-      </div>
-      <div class="Paragraph">
-       &gt; [!question]
- 
-+ &gt; Lorem ipsum dolor sit amet
-      </div>
-      <div class="Paragraph">
-       &gt;[!question]
- 
-+ &gt;Why is the sky blue?
-      </div>
-     </div>
-    </div>
-   </div>
-  </div>
-  <div class="Subject">
-   <div class="Subject_header header">
-    <span class="prefix value">
-     ##
-    </span>
-    <a class="SubjectName name" id="Capabilities">
-     Capabilities
+    <a class="SubjectName name" id="Diagrams">
+     Diagrams
     </a>
    </div>
    <div class="subjects list">
@@ -1506,65 +2122,24 @@ This is the content of the admonition tip.
       <span class="prefix value">
        ###
       </span>
-      <a class="SubjectName name" id="To PDF">
-       To PDF
+      <a class="SubjectName name" id="Figures">
+       Figures
       </a>
      </div>
-    </div>
-    <div class="Subject">
-     <div class="Subject_header header">
-      <span class="prefix value">
-       ###
-      </span>
-      <a class="SubjectName name" id="To HTML">
-       To HTML
-      </a>
-     </div>
-    </div>
-    <div class="Subject">
-     <div class="Subject_header header">
-      <span class="prefix value">
-       ###
-      </span>
-      <a class="SubjectName name" id="Prettify">
-       Prettify
-      </a>
-     </div>
-    </div>
-    <div class="Subject">
-     <div class="Subject_header header">
-      <span class="prefix value">
-       ###
-      </span>
-      <a class="SubjectName name" id="Edit in VS Code">
-       Edit in VS Code
-      </a>
-     </div>
-    </div>
-    <div class="Subject">
-     <div class="Subject_header header">
-      <span class="prefix value">
-       ###
-      </span>
-      <a class="SubjectName name" id="TOC">
-       TOC
-      </a>
-     </div>
-    </div>
-    <div class="Subject">
-     <div class="Subject_header header">
-      <span class="prefix value">
-       ###
-      </span>
-      <a class="SubjectName name" id="Index">
-       Index
-      </a>
+     <div class="elaboration list">
+      <div class="Paragraph mdhtml">
+       <ol>
+        <li>
+         First item
+        </li>
+       </ol>
+      </div>
      </div>
     </div>
    </div>
   </div>
  </div>
 </div>
-
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="298px" preserveAspectRatio="none" style="width:320px;height:298px;background:#FFFFFF;" version="1.1" viewBox="0 0 320 298" width="320px" zoomAndPan="magnify"><defs/><g><g><title>Foo1</title><rect fill="#000000" fill-opacity="0.00000" height="136.5313" width="8" x="21.0454" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="25" x2="25" y1="81.2969" y2="217.8281"/></g><g><title>Foo2</title><rect fill="#000000" fill-opacity="0.00000" height="136.5313" width="8" x="127.0127" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="130.5127" x2="130.5127" y1="81.2969" y2="217.8281"/></g><g><title>Foo3</title><rect fill="#000000" fill-opacity="0.00000" height="136.5313" width="8" x="181.5581" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="185.5127" x2="185.5127" y1="81.2969" y2="217.8281"/></g><g><title>Foo4</title><rect fill="#000000" fill-opacity="0.00000" height="136.5313" width="8" x="231.6489" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="235.6035" x2="235.6035" y1="81.2969" y2="217.8281"/></g><g><title>Foo5</title><rect fill="#000000" fill-opacity="0.00000" height="136.5313" width="8" x="281.7397" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="285.6943" x2="285.6943" y1="81.2969" y2="217.8281"/></g><g class="participant participant-head" data-participant="Foo1"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34.0908" x="5" y="77.9951">Foo1</text><ellipse cx="25.0454" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M25.0454,21.5 L25.0454,48.5 M12.0454,29.5 L38.0454,29.5 M25.0454,48.5 L12.0454,63.5 M25.0454,48.5 L38.0454,63.5" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><g class="participant participant-tail" data-participant="Foo1"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34.0908" x="5" y="229.8232">Foo1</text><ellipse cx="25.0454" cy="241.625" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M25.0454,249.625 L25.0454,276.625 M12.0454,257.625 L38.0454,257.625 M25.0454,276.625 L12.0454,291.625 M25.0454,276.625 L38.0454,291.625" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><g class="participant participant-head" data-participant="Foo2"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34.0908" x="110.9673" y="77.9951">Foo2</text><path d="M110.5127,37 L110.5127,61 M110.5127,49 L127.5127,49" fill="none" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="139.5127" cy="49" fill="#E2E2F0" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/></g><g class="participant participant-tail" data-participant="Foo2"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34.0908" x="110.9673" y="229.8232">Foo2</text><path d="M110.5127,237.125 L110.5127,261.125 M110.5127,249.125 L127.5127,249.125" fill="none" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="139.5127" cy="249.125" fill="#E2E2F0" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/></g><g class="participant participant-head" data-participant="Foo3"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34.0908" x="165.5127" y="77.9951">Foo3</text><ellipse cx="185.5581" cy="49" fill="#E2E2F0" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><polygon fill="#181818" points="181.5581,37,187.5581,32,185.5581,37,187.5581,42,181.5581,37" style="stroke:#181818;stroke-width:1;"/></g><g class="participant participant-tail" data-participant="Foo3"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34.0908" x="165.5127" y="229.8232">Foo3</text><ellipse cx="185.5581" cy="249.125" fill="#E2E2F0" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><polygon fill="#181818" points="181.5581,237.125,187.5581,232.125,185.5581,237.125,187.5581,242.125,181.5581,237.125" style="stroke:#181818;stroke-width:1;"/></g><g class="participant participant-head" data-participant="Foo4"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34.0908" x="215.6035" y="77.9951">Foo4</text><ellipse cx="235.6489" cy="49" fill="#E2E2F0" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="223.6489" x2="247.6489" y1="63" y2="63"/></g><g class="participant participant-tail" data-participant="Foo4"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34.0908" x="215.6035" y="229.8232">Foo4</text><ellipse cx="235.6489" cy="249.125" fill="#E2E2F0" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="223.6489" x2="247.6489" y1="263.125" y2="263.125"/></g><g class="participant participant-head" data-participant="Foo5"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34.0908" x="265.6943" y="77.9951">Foo5</text><path d="M267.7397,29 C267.7397,19 285.7397,19 285.7397,19 C285.7397,19 303.7397,19 303.7397,29 L303.7397,55 C303.7397,65 285.7397,65 285.7397,65 C285.7397,65 267.7397,65 267.7397,55 L267.7397,29" fill="#E2E2F0" style="stroke:#181818;stroke-width:1.5;"/><path d="M267.7397,29 C267.7397,39 285.7397,39 285.7397,39 C285.7397,39 303.7397,39 303.7397,29" fill="none" style="stroke:#181818;stroke-width:1.5;"/></g><g class="participant participant-tail" data-participant="Foo5"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34.0908" x="265.6943" y="229.8232">Foo5</text><path d="M267.7397,243.125 C267.7397,233.125 285.7397,233.125 285.7397,233.125 C285.7397,233.125 303.7397,233.125 303.7397,243.125 L303.7397,269.125 C303.7397,279.125 285.7397,279.125 285.7397,279.125 C285.7397,279.125 267.7397,279.125 267.7397,269.125 L267.7397,243.125" fill="#E2E2F0" style="stroke:#181818;stroke-width:1.5;"/><path d="M267.7397,243.125 C267.7397,253.125 285.7397,253.125 285.7397,253.125 C285.7397,253.125 303.7397,253.125 303.7397,243.125" fill="none" style="stroke:#181818;stroke-width:1.5;"/></g><g class="message" data-participant-1="Foo1" data-participant-2="Foo2"><polygon fill="#181818" points="119.0127,108.4297,129.0127,112.4297,119.0127,116.4297,123.0127,112.4297" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="25.0454" x2="125.0127" y1="112.4297" y2="112.4297"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81.9673" x="32.0454" y="107.3638">To boundary</text></g><g class="message" data-participant-1="Foo1" data-participant-2="Foo3"><polygon fill="#181818" points="173.5581,137.5625,183.5581,141.5625,173.5581,145.5625,177.5581,141.5625" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="25.0454" x2="179.5581" y1="141.5625" y2="141.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="65.3745" x="32.0454" y="136.4966">To control</text></g><g class="message" data-participant-1="Foo1" data-participant-2="Foo4"><polygon fill="#181818" points="223.6489,166.6953,233.6489,170.6953,223.6489,174.6953,227.6489,170.6953" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="25.0454" x2="229.6489" y1="170.6953" y2="170.6953"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57.7637" x="32.0454" y="165.6294">To entity</text></g><g class="message" data-participant-1="Foo1" data-participant-2="Foo5"><polygon fill="#181818" points="273.7397,195.8281,283.7397,199.8281,273.7397,203.8281,277.7397,199.8281" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="25.0454" x2="279.7397" y1="199.8281" y2="199.8281"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="80.2979" x="32.0454" y="194.7622">To database</text></g><!--SRC=[IqmkoIzISClFD-HAoY_DIqaigWJnZBYIy_DAYl9pG1nZhjIyaimIi8G9LqfYIM9IOd4gY6VA1TAfe6i7rgDWfH2Ihm0p1bdA6285DHDPnWGY0x40MS8K8W6p3G00]--></g></svg>
 </body>
 </html>

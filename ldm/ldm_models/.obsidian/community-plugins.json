@@ -3,5 +3,9 @@
   "obsidian-quiet-outline",
   "emoji-shortcodes",
   "csv-codeblock",
-  "obsidian-admonition"
+  "obsidian-admonition",
+  "mermaid-tools",
+  "mehrmaid",
+  "image-captions",
+  "obsidian-plantuml"
 ]

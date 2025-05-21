@@ -245,7 +245,8 @@ if __name__ == "__main__":
     model_doc = "Literate.md"
     model_doc = "LiterateTester.md"
 
-
+    model_doc = "plantuml_test.md"
+    model_doc = "mermaid_test.md"
 
     ldm_dull_specs["model_doc"] = model_doc
     build_dull_dsl(ldm_dull_specs)

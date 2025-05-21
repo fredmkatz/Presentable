@@ -237,6 +237,105 @@ subjects:
           one_liner:
             _type: OneLiner
             content: when the edition was released to the public
+          elaboration:
+          - _type: Paragraph
+            content: 'Just use Mermaid in code block
+
+              '
+          - _type: CodeBlock
+            content: '``` notmermaid
+
+
+              block-beta
+
+              columns 3
+
+              a:3
+
+              block:group1:2
+
+              columns 2
+
+              h i j k
+
+              end
+
+              g
+
+              block:group2:3
+
+              %% columns auto (default)
+
+              l m n o p q r
+
+              end
+
+
+              ```'
+          - _type: Paragraph
+            content: 'And here''s the result
+
+              '
+          - _type: CodeBlock
+            content: '```mermaid
+
+              block-beta
+
+              columns 3
+
+              a:3
+
+              block:group1:2
+
+              columns 2
+
+              h i j k
+
+              end
+
+              g
+
+              block:group2:3
+
+              %% columns auto (default)
+
+              l m n o p q r
+
+              end
+
+              ```'
+          - _type: CodeBlock
+            content: '``` mermaid
+
+
+              erDiagram
+
+              CAR {
+
+              string registrationNumber
+
+              string make
+
+              string model
+
+              }
+
+              PERSON {
+
+              string firstName
+
+              string lastName
+
+              int age
+
+              }
+
+
+              style CAR fill:#f9f,stroke:#333,stroke-width:4px
+
+
+
+              ```'
           is_embellishment: false
           prefix: '-'
           name:
@@ -257,6 +356,58 @@ subjects:
               _type: IsOptional
               t_value: false
     - _type: Class
+      elaboration:
+      - _type: CodeBlock
+        content: '``` mermaid
+
+          erDiagram
+
+
+
+          class Subject Component
+
+          class Section Component
+
+          class Attribute Component
+
+          class Class Component
+
+
+          SUBJECT {
+
+          string name
+
+
+          }
+
+          Subject ||--|{ Subject : contains
+
+          Subject ||--|{ Class : contains
+
+          Class {
+
+          string name
+
+          }
+
+
+          Class ||--|{ Section : contains
+
+          Class ||--|{ Attribute : contains
+
+          Attribute {
+
+
+          string name
+
+          }
+
+          Section ||--|{ Attribute : contains
+
+
+
+
+          ```'
       is_embellishment: false
       prefix: _
       name:
@@ -270,6 +421,34 @@ subjects:
         _type='SubtypingName'))
       is_value_type: false
     - _type: Class
+      elaboration:
+      - _type: Paragraph
+        content: 'And in the elaboration, a figure:
+
+          '
+      - _type: Paragraph
+        content: "<figure>\n \n+ <img src=\"../FMKNYIDFrontIMG_1141.jpg\" alt=\"Trulli\"\
+          \ style=\"width:30%\">\n \n+ <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>\n\
+          \ \n+ </figure>\n \n+ And the same figure with figure/caption markup\n"
+      - _type: Paragraph
+        content: "<figure title=\"A Drivers License\">\n \n+ <img src=\"../FMKNYIDFrontIMG_1141.jpg\"\
+          \ style=\"width:20%\">\n \n+ <figcaption>My Non-Drivers License</figcaption>\n\
+          \ \n+ </figure>\n"
+      - _type: Paragraph
+        content: 'and a list of codes
+
+          '
+      - _type: CodeBlock
+        content: '```csv
+
+          eFormat, Description
+
+          E-Book, ''Kindle or Apple books - etc''
+
+          PDF, formatted for printing and direct delivery
+
+
+          ```'
       is_embellishment: false
       prefix: _
       name:
@@ -1018,175 +1197,23 @@ subjects:
       _type: SubjectName
       content: Comments
     parenthetical: ''
-  - _type: SubjectC
-    elaboration:
-    - _type: Paragraph
-      content: 'just copy and paste into Obsidian page (or drag and drop)
-
-        '
-    - _type: Paragraph
-      content: 'Captions are harder
-
-        '
-    is_embellishment: false
-    prefix: '###'
-    name:
-      _type: SubjectName
-      content: Figures DS Copy jpg
-    parenthetical: ''
 - _type: SubjectB
-  elaboration:
-  - _type: CodeBlock
-    content: '``` (mermaid)
-
-
-      block-beta
-
-      columns 3
-
-      a:3
-
-      block:group1:2
-
-      columns 2
-
-      h i j k
-
-      end
-
-      g
-
-      block:group2:3
-
-      %% columns auto (default)
-
-      l m n o p q r
-
-      end
-
-      ```'
-  - _type: Paragraph
-    content: 'And here''s the result
-
-      '
-  - _type: CodeBlock
-    content: '```mermaid
-
-
-      block-beta
-
-      columns 3
-
-      a:3
-
-      block:group1:2
-
-      columns 2
-
-      h i j k
-
-      end
-
-      g
-
-      block:group2:3
-
-      %% columns auto (default)
-
-      l m n o p q r
-
-      end
-
-      ```'
   is_embellishment: false
   prefix: '##'
   name:
     _type: SubjectName
-    content: Diagrams Just use Mermaid in code block
-  parenthetical: ''
-- _type: SubjectB
-  elaboration:
-  - _type: CodeBlock
-    content: '```ad-tip
-
-      title: This is a tip
-
-      This is the content of the admonition tip.
-
-      ```'
-  is_embellishment: false
-  prefix: '##'
-  name:
-    _type: SubjectName
-    content: Admonitions
+    content: Diagrams
   parenthetical: ''
   subjects:
   - _type: SubjectC
     elaboration:
     - _type: Paragraph
-      content: "> [!info]\n \n+ > Here's a callout block.\n \n+ > It supports **Markdown**,\
-        \ [[Internal link|Wikilinks]], and [[Embed files|embeds]]!\n \n+ > ![[Engelbart.jpg]]\n"
-    - _type: Paragraph
-      content: "> [!note]\n \n+ > Lorem ipsum dolor sit amet\n"
-    - _type: Paragraph
-      content: "> [!abstract]\n \n+ > Lorem ipsum dolor sit amet\n"
-    - _type: Paragraph
-      content: "> [!question]\n \n+ > Lorem ipsum dolor sit amet\n"
-    - _type: Paragraph
-      content: ">[!question]\n \n+ >Why is the sky blue?\n"
+      content: '1. First item
+
+        '
     is_embellishment: false
     prefix: '###'
     name:
       _type: SubjectName
-      content: Obsidian Callouts
-    parenthetical: ''
-- _type: SubjectB
-  is_embellishment: false
-  prefix: '##'
-  name:
-    _type: SubjectName
-    content: Capabilities
-  parenthetical: ''
-  subjects:
-  - _type: SubjectC
-    is_embellishment: false
-    prefix: '###'
-    name:
-      _type: SubjectName
-      content: To PDF
-    parenthetical: ''
-  - _type: SubjectC
-    is_embellishment: false
-    prefix: '###'
-    name:
-      _type: SubjectName
-      content: To HTML
-    parenthetical: ''
-  - _type: SubjectC
-    is_embellishment: false
-    prefix: '###'
-    name:
-      _type: SubjectName
-      content: Prettify
-    parenthetical: ''
-  - _type: SubjectC
-    is_embellishment: false
-    prefix: '###'
-    name:
-      _type: SubjectName
-      content: Edit in VS Code
-    parenthetical: ''
-  - _type: SubjectC
-    is_embellishment: false
-    prefix: '###'
-    name:
-      _type: SubjectName
-      content: TOC
-    parenthetical: ''
-  - _type: SubjectC
-    is_embellishment: false
-    prefix: '###'
-    name:
-      _type: SubjectName
-      content: Index
+      content: Figures
     parenthetical: ''

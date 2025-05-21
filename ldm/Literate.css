@@ -17,6 +17,10 @@ body {
     clear: left;
   }
 
+  .mdhtml {
+    background-color: blanchedalmond ;
+  }
+
   .AttributeSectionName {
     font-weight: bold;
     font-style: italic;

@@ -314,6 +314,28 @@
                         "_type": "OneLiner",
                         "content": "when the edition was released to the public"
                       },
+                      "elaboration": [
+                        {
+                          "_type": "Paragraph",
+                          "content": "Just use Mermaid in code block\n"
+                        },
+                        {
+                          "_type": "CodeBlock",
+                          "content": "``` notmermaid\n\nblock-beta\ncolumns 3\na:3\nblock:group1:2\ncolumns 2\nh i j k\nend\ng\nblock:group2:3\n%% columns auto (default)\nl m n o p q r\nend\n\n```"
+                        },
+                        {
+                          "_type": "Paragraph",
+                          "content": "And here's the result\n"
+                        },
+                        {
+                          "_type": "CodeBlock",
+                          "content": "```mermaid\nblock-beta\ncolumns 3\na:3\nblock:group1:2\ncolumns 2\nh i j k\nend\ng\nblock:group2:3\n%% columns auto (default)\nl m n o p q r\nend\n```"
+                        },
+                        {
+                          "_type": "CodeBlock",
+                          "content": "``` mermaid\n\nerDiagram\nCAR {\nstring registrationNumber\nstring make\nstring model\n}\nPERSON {\nstring firstName\nstring lastName\nint age\n}\n\nstyle CAR fill:#f9f,stroke:#333,stroke-width:4px\n\n\n```"
+                        }
+                      ],
                       "is_embellishment": false,
                       "prefix": "-",
                       "name": {
@@ -346,6 +368,12 @@
             },
             {
               "_type": "Class",
+              "elaboration": [
+                {
+                  "_type": "CodeBlock",
+                  "content": "``` mermaid\nerDiagram\n\n\nclass Subject Component\nclass Section Component\nclass Attribute Component\nclass Class Component\n\nSUBJECT {\nstring name\n\n}\nSubject ||--|{ Subject : contains\nSubject ||--|{ Class : contains\nClass {\nstring name\n}\n\nClass ||--|{ Section : contains\nClass ||--|{ Attribute : contains\nAttribute {\n\nstring name\n}\nSection ||--|{ Attribute : contains\n\n\n\n```"
+                }
+              ],
               "is_embellishment": false,
               "prefix": "_",
               "name": {
@@ -361,6 +389,28 @@
             },
             {
               "_type": "Class",
+              "elaboration": [
+                {
+                  "_type": "Paragraph",
+                  "content": "And in the elaboration, a figure:\n"
+                },
+                {
+                  "_type": "Paragraph",
+                  "content": "<figure>\n \n+ <img src=\"../FMKNYIDFrontIMG_1141.jpg\" alt=\"Trulli\" style=\"width:30%\">\n \n+ <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>\n \n+ </figure>\n \n+ And the same figure with figure/caption markup\n"
+                },
+                {
+                  "_type": "Paragraph",
+                  "content": "<figure title=\"A Drivers License\">\n \n+ <img src=\"../FMKNYIDFrontIMG_1141.jpg\" style=\"width:20%\">\n \n+ <figcaption>My Non-Drivers License</figcaption>\n \n+ </figure>\n"
+                },
+                {
+                  "_type": "Paragraph",
+                  "content": "and a list of codes\n"
+                },
+                {
+                  "_type": "CodeBlock",
+                  "content": "```csv\neFormat, Description\nE-Book, 'Kindle or Apple books - etc'\nPDF, formatted for printing and direct delivery\n\n```"
+                }
+              ],
               "is_embellishment": false,
               "prefix": "_",
               "name": {
@@ -1311,100 +1361,6 @@
             "content": "Comments"
           },
           "parenthetical": ""
-        },
-        {
-          "_type": "SubjectC",
-          "elaboration": [
-            {
-              "_type": "Paragraph",
-              "content": "just copy and paste into Obsidian page (or drag and drop)\n"
-            },
-            {
-              "_type": "Paragraph",
-              "content": "Captions are harder\n"
-            }
-          ],
-          "is_embellishment": false,
-          "prefix": "###",
-          "name": {
-            "_type": "SubjectName",
-            "content": "Figures DS Copy jpg"
-          },
-          "parenthetical": ""
-        }
-      ]
-    },
-    {
-      "_type": "SubjectB",
-      "elaboration": [
-        {
-          "_type": "CodeBlock",
-          "content": "``` (mermaid)\n\nblock-beta\ncolumns 3\na:3\nblock:group1:2\ncolumns 2\nh i j k\nend\ng\nblock:group2:3\n%% columns auto (default)\nl m n o p q r\nend\n```"
-        },
-        {
-          "_type": "Paragraph",
-          "content": "And here's the result\n"
-        },
-        {
-          "_type": "CodeBlock",
-          "content": "```mermaid\n\nblock-beta\ncolumns 3\na:3\nblock:group1:2\ncolumns 2\nh i j k\nend\ng\nblock:group2:3\n%% columns auto (default)\nl m n o p q r\nend\n```"
-        }
-      ],
-      "is_embellishment": false,
-      "prefix": "##",
-      "name": {
-        "_type": "SubjectName",
-        "content": "Diagrams Just use Mermaid in code block"
-      },
-      "parenthetical": ""
-    },
-    {
-      "_type": "SubjectB",
-      "elaboration": [
-        {
-          "_type": "CodeBlock",
-          "content": "```ad-tip\ntitle: This is a tip\nThis is the content of the admonition tip.\n```"
-        }
-      ],
-      "is_embellishment": false,
-      "prefix": "##",
-      "name": {
-        "_type": "SubjectName",
-        "content": "Admonitions"
-      },
-      "parenthetical": "",
-      "subjects": [
-        {
-          "_type": "SubjectC",
-          "elaboration": [
-            {
-              "_type": "Paragraph",
-              "content": "> [!info]\n \n+ > Here's a callout block.\n \n+ > It supports **Markdown**, [[Internal link|Wikilinks]], and [[Embed files|embeds]]!\n \n+ > ![[Engelbart.jpg]]\n"
-            },
-            {
-              "_type": "Paragraph",
-              "content": "> [!note]\n \n+ > Lorem ipsum dolor sit amet\n"
-            },
-            {
-              "_type": "Paragraph",
-              "content": "> [!abstract]\n \n+ > Lorem ipsum dolor sit amet\n"
-            },
-            {
-              "_type": "Paragraph",
-              "content": "> [!question]\n \n+ > Lorem ipsum dolor sit amet\n"
-            },
-            {
-              "_type": "Paragraph",
-              "content": ">[!question]\n \n+ >Why is the sky blue?\n"
-            }
-          ],
-          "is_embellishment": false,
-          "prefix": "###",
-          "name": {
-            "_type": "SubjectName",
-            "content": "Obsidian Callouts"
-          },
-          "parenthetical": ""
         }
       ]
     },
@@ -1414,67 +1370,23 @@
       "prefix": "##",
       "name": {
         "_type": "SubjectName",
-        "content": "Capabilities"
+        "content": "Diagrams"
       },
       "parenthetical": "",
       "subjects": [
         {
           "_type": "SubjectC",
+          "elaboration": [
+            {
+              "_type": "Paragraph",
+              "content": "1. First item\n"
+            }
+          ],
           "is_embellishment": false,
           "prefix": "###",
           "name": {
             "_type": "SubjectName",
-            "content": "To PDF"
-          },
-          "parenthetical": ""
-        },
-        {
-          "_type": "SubjectC",
-          "is_embellishment": false,
-          "prefix": "###",
-          "name": {
-            "_type": "SubjectName",
-            "content": "To HTML"
-          },
-          "parenthetical": ""
-        },
-        {
-          "_type": "SubjectC",
-          "is_embellishment": false,
-          "prefix": "###",
-          "name": {
-            "_type": "SubjectName",
-            "content": "Prettify"
-          },
-          "parenthetical": ""
-        },
-        {
-          "_type": "SubjectC",
-          "is_embellishment": false,
-          "prefix": "###",
-          "name": {
-            "_type": "SubjectName",
-            "content": "Edit in VS Code"
-          },
-          "parenthetical": ""
-        },
-        {
-          "_type": "SubjectC",
-          "is_embellishment": false,
-          "prefix": "###",
-          "name": {
-            "_type": "SubjectName",
-            "content": "TOC"
-          },
-          "parenthetical": ""
-        },
-        {
-          "_type": "SubjectC",
-          "is_embellishment": false,
-          "prefix": "###",
-          "name": {
-            "_type": "SubjectName",
-            "content": "Index"
+            "content": "Figures"
           },
           "parenthetical": ""
         }

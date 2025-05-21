@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LiterateTester.md",
-                "mode": "source",
+                "file": "mermaid_test.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "LiterateTester"
+              "title": "mermaid_test"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "LiterateTester.md",
+                "file": "mermaid/mermaid_test.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of LiterateTester"
+              "title": "Outline of mermaid_test"
             }
           },
           {
@@ -176,7 +176,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -190,25 +190,36 @@
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": true,
-      "markdown-table-editor:Open Markdown Table Editor": false
+      "markdown-table-editor:Open Markdown Table Editor": false,
+      "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
   "active": "c7904c6925e9ed75",
   "lastOpenFiles": [
-    "LiterateTester_results/LiterateTester.pdf",
-    "LiterateTester_results/LiterateTester.html",
-    "LiterateTester_results/LiterateTester.rendered.md",
-    "LiterateTester_results/LiterateTester.model.yaml",
-    "LiterateTester_results/LiterateTester.model.json",
-    "LiterateTester_results/LiterateTester.dict.yaml",
-    "LiterateTester_results/LiterateTester.dict.json",
-    "Literate_results/Literate.pdf",
-    "Literate_results/Literate.html",
-    "Literate_results/Literate.rendered.md",
-    "Literate_results/Literate.model.yaml",
-    "Literate_results/Literate.model.json",
+    "mermaid_test_results/mermaid_test.pdf",
+    "mermaid_test_results/mermaid_test.html",
     "LiterateTester.md",
+    "mermaid_test_results/mermaid_test.rendered.md",
+    "mermaid_test_results/mermaid_test.model.yaml",
+    "mermaid_test_results/mermaid_test.model.json",
+    "mermaid_test_results/mermaid_test.dict.yaml",
+    "mermaid_test_results/mermaid_test.dict.json",
+    "mermaid_test_results/mermaid_test.parsed.txt",
+    "mermaid_test_trace.txt",
+    "mermaid_test_results",
+    "plantuml_test_results/plantuml_test.dict.yaml",
+    "plantuml_test.md",
+    "mermaid/mermaid_test.md",
+    "mermaid_test.md",
+    "mermaid/plant_test.md",
+    "mermaid/plantuml_test.md",
+    "mdtestdocs/mdtest_doc.md",
+    "mermaid/Diagrams/Welcome.md",
+    "mdtestdocs/markdownit_demo.md",
+    "LiterateTester_results/LiterateTester.rendered.md",
+    "FMKNYIDFrontIMG_1141.jpg",
     "Literate.md",
+    "Literate_results/Literate.rendered.md",
     "LiterateTester_results/LiterateTester.clean.md",
     "Literate_results/Literate.clean.md"
   ]
